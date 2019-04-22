@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+    registry = "sudheshpn/calculator"
+    registryCredential = 'dockerhub'
+  }
      agent any
      stages {
           stage("Compile") {
