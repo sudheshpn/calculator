@@ -2,6 +2,7 @@ pipeline {
     environment {
     registry = "sudheshpn/calculator"
     registryCredential = 'dockerhub'
+    dockerImage = docker.build registry + ":$BUILD_NUMBER"
   }
      agent any
      stages {
@@ -48,8 +49,11 @@ pipeline {
         } 
          stage("Docker push") {
     	      steps {
-                    sh "docker push sudheshpn/calculator"
+                scripts {
+                  docker.withRegistry( '', registryCredential ) {
+                    dockerImage.push()
                 }
           }
+}
      }
 }
