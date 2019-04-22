@@ -50,7 +50,7 @@ pipeline {
          stage("Docker push") {
     	      steps {
                 scripts {
-                  docker.withRegistry( '', registryCredential ) {
+                  docker.withRegistry( 'https://index.docker.io/v1', registryCredential ) {
                     dockerImage.push()
                 }
           }
