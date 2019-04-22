@@ -41,10 +41,11 @@ pipeline {
 
          stage("Docker build") {
     	      steps {
-                    sh "docker build -t sudheshpn/calculator ."
+                script {
+                  docker.build registry + ":$BUILD_NUMBER"
                 }
           }
-         
+        } 
          stage("Docker push") {
     	      steps {
                     sh "docker push sudheshpn/calculator"
