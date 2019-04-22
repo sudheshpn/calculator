@@ -40,5 +40,11 @@ pipeline {
                     sh "docker build -t sudheshpn/calculator ."
                 }
           }
+         
+         stage("Docker push") {
+    	      steps {
+                    sh "docker push sudheshpn/calculator"
+                }
+          }
      }
 }
