@@ -51,7 +51,7 @@ pipeline {
     	      steps {
                 script {
                   docker.withRegistry( 'https://index.docker.io/v1', 'dockerhub' ) {
-                    dockerImage.push(sudheshpn/calculator)
+                    dockerImage.push(calculator)
                 }
           }
 }
