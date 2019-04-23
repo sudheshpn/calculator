@@ -6,12 +6,6 @@ pipeline {
     dockerImage = ''
   }
      agent any
-     stages {
-          stage('PrintENV') {
-               steps {
-                    sh "printenv"
-              }
-           }
           stage("Compile") {
                steps {
                     sh "./gradlew compileJava"
