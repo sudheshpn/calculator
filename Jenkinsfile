@@ -9,6 +9,10 @@ pipeline {
        PATH = "/usr/local/bin:$PATH"
 }
      stages {
+          stage('PrintENV') {
+               steps {
+                    sh "printenv echo $PATH" 
+     stages {
           stage("Compile") {
                steps {
                     sh "./gradlew compileJava"
