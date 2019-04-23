@@ -2,7 +2,6 @@ pipeline {
     environment {
     registry = "sudheshpn/calculator"
     registryCredential = 'dockerhub'
-    PATH = "$PATH:/usr/bin"
     dockerImage = ''
   }
      agent any
