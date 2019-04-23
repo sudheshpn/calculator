@@ -1,8 +1,10 @@
 version: "2"
 services:
   calculator:
-    image: leszko/calculator:latest
-    ports:
-      - 8080
+    build: .
+    ports: 
+         - 8080
+    depends_on: 
+      - redis
   redis:
     image: redis:latest

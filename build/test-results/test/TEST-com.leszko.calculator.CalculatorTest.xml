@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.leszko.calculator.CalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-11T14:23:44" hostname="jenkins" time="0.002">
+<testsuite name="com.leszko.calculator.CalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-04-23T04:59:22" hostname="jenkins" time="0.003">
   <properties/>
-  <testcase name="testSum" classname="com.leszko.calculator.CalculatorTest" time="0.002"/>
+  <testcase name="testSum" classname="com.leszko.calculator.CalculatorTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -46,6 +46,11 @@ pipeline {
                  dockerImage = docker.build registry + ":$BUILD_NUMBER"
                 }
           }
+        }
+        stage("Deploy to staging") {
+              steps {
+                    sh "docker-compose up -d"
+               }
         } 
          stage("Docker push") {
     	      steps {
@@ -53,8 +58,6 @@ pipeline {
                   docker.withRegistry( '', registryCredential ) {
                     dockerImage.push()
                 }
-          }
-}
      }
 }
 }
