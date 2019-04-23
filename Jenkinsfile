@@ -44,7 +44,7 @@ pipeline {
         stage("Deploy to staging") {
               steps {
                     echo "PATH is: $PATH"
-                    sh "chmod+x /usr/bin/docker-compose"
+                    sh "chmod +x /usr/bin/docker-compose"
                     sh "/usr/bin/docker-compose up --build -d"
                }
         } 
