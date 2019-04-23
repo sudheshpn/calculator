@@ -14,7 +14,6 @@ pipeline {
                     sh "printenv echo $PATH"
               }
            }
- } 
           stage("Compile") {
                steps {
                     sh "./gradlew compileJava"
