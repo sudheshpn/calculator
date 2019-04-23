@@ -5,8 +5,9 @@ pipeline {
     dockerImage = ''
   }
      agent any
+
      environment {
-       PATH = "/usr/local/bin"
+         PATH = "/usr/local/bin"
 }
      stages {
           stage('PrintENV') {
