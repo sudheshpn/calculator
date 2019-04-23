@@ -5,6 +5,8 @@ pipeline {
     dockerImage = ''
   }
      agent any
+     environment {
+       PATH = "/usr/local/bin:$PATH"
      stages {
           stage("Compile") {
                steps {
@@ -49,6 +51,7 @@ pipeline {
         }
         stage("Deploy to staging") {
               steps {
+                    echo "PATH is: $PATH"
                     sh "docker-compose up --build -d"
                }
         } 
