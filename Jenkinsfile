@@ -9,7 +9,7 @@ pipeline {
      stages {
           stage('PrintENV') {
                steps {
-                    sh "printenv echo $PATH"
+                    sh "printenv"
               }
            }
           stage("Compile") {
