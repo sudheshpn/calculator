@@ -51,7 +51,6 @@ pipeline {
         stage("Deploy to staging") {
               steps {
                     echo "PATH is: $PATH"
-	            sh " ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose"
                     sh "docker-compose up --build -d"
                }
         } 
