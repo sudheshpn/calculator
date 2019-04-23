@@ -2,7 +2,7 @@ pipeline {
     environment {
     registry = "sudheshpn/calculator"
     registryCredential = 'dockerhub'
-    PATH = "$PATH:/usr/local/bin"
+    PATH = "$PATH:/usr/bin"
     dockerImage = ''
   }
      agent any
@@ -51,7 +51,7 @@ pipeline {
         stage("Deploy to staging") {
               steps {
                     echo "PATH is: $PATH"
-                    sh "/usr/local/bin/docker-compose up --build -d"
+                    sh "/usr/bin/docker-compose up --build -d"
                }
         } 
          stage("Docker push") {
