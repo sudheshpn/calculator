@@ -41,13 +41,6 @@ pipeline {
                }
 	  }
 
-         stage("Docker build") {
-    	      steps {
-                script {
-                 dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                }
-          }
-        }
         stage("Deploy to staging") {
               steps {
                     echo "PATH is: $PATH"
