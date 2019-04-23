@@ -2,13 +2,10 @@ pipeline {
     environment {
     registry = "sudheshpn/calculator"
     registryCredential = 'dockerhub'
+    PATH = "/usr/local/bin"
     dockerImage = ''
   }
      agent any
-
-     environment {
-         PATH = "/usr/local/bin"
-}
      stages {
           stage('PrintENV') {
                steps {
