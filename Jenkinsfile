@@ -50,6 +50,7 @@ pipeline {
               always {
                      sh "docker-compose down"
     }
+}
 } 
 }
 }
