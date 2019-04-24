@@ -45,6 +45,7 @@ pipeline {
                     sh "/usr/bin/docker-compose up --build -d"
                }
         }
+        stage("Down") {
         post {
               always {
                      sh "docker-compose down"
