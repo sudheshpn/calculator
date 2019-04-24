@@ -2,7 +2,6 @@ pipeline {
     environment {
     registry = "sudheshpn/calculator"
     registryCredential = 'dockerhub'
-    dockerImage = ''
   }
      agent any
 	stages{
@@ -45,15 +44,11 @@ pipeline {
                     echo "PATH is: $PATH"
                     sh "/usr/bin/docker-compose up --build -d"
                }
-        } 
-         stage("Docker push") {
-    	      steps {
-                script {
-                  docker.withRegistry( '', registryCredential ) {
-                    dockerImage.push()
-                }
-     }
-}
-}
+        }
+        post {
+              always {
+                     sh "docker-compose down"
+    }
+} 
 }
 }
